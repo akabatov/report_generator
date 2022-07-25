@@ -1,0 +1,21 @@
+{% extends 'app/base.html'%}
+
+{% block content %}
+<div>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <input id="upload-file" type="file" name="document">
+        <button  formaction="/scanning/" id='submit-btn' type="submit" disabled>Upload and scan</button>
+    </form> 
+</div>
+
+<script>
+    const selectElement = document.querySelector('#upload-file');
+    
+    selectElement.addEventListener('change', (event) => {
+        const result = document.querySelector('#submit-btn');
+        result.disabled = false
+    })
+</script>
+     
+{% endblock %}

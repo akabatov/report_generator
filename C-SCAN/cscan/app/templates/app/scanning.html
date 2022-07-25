@@ -1,0 +1,14 @@
+{% extends 'app/base.html'%}
+
+{% block content %}
+    <h1>Report Review</h1>
+    {% for container in report %}
+    <ul>
+        <li>{{container}}</li>
+    </ul>
+    {% endfor %}
+    <form action="/download/">
+        <button>Generate Report</button>
+    </form>
+
+{% endblock %}
