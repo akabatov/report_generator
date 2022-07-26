@@ -1,0 +1,34 @@
+.main{
+    display: table;
+    text-align: center;
+    background-image: linear-gradient(to bottom, #418858, #3d8b50, #3b8d47, #3a8f3d, #3b9131);
+    height: 100vh;
+    width: 100vw;
+}
+
+
+.header-form{
+    display: flex; 
+    align-items: center;
+    vertical-align: center;
+    width: 100vw;
+    height: 60px;
+    background-image: linear-gradient(to bottom, #b7d6c1, #aed0b6, #a6caab, #9ec39f, #97bd93);  
+}
+
+.title{
+    margin-top: 1vw;
+    margin-left: 1vw;
+    font-size:large;
+}
+
+#home-btn{
+    margin-left: 3vw;
+    margin-right: 3vw;
+}
+
+.coffee-img{
+    width: 50vw;
+    height: 42vw;
+    opacity: 0.6;
+}
