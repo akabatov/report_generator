@@ -1,12 +1,15 @@
 {% extends 'app/base.html'%}
 
 {% block content %}
-<div>
-    <form method="post" enctype="multipart/form-data">
-        {% csrf_token %}
-        <input id="upload-file" type="file" name="document">
-        <button  formaction="/scanning/" id='submit-btn' type="submit" disabled>Upload and scan</button>
-    </form> 
+<div style="margin-right:auto; margin-top:8%; margin-left:auto; background-color:rgba(250, 241, 238, 0.5); width:50%; height:50vh; display:table;" class="shadow-lg p-3 mb-5 bg-body rounded">
+    <div style="display:table-cell; vertical-align:middle;">
+        <h2 style="margin-bottom:5vh;">Upload a file to scan</h2>
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <input class="btn btn-outline-secondary" id="upload-file" type="file" name="document">
+            <button  class="btn btn-outline-danger" formaction="/scanning/" id='submit-btn' type="submit" disabled>Upload and scan</button>
+        </form>
+    </div>
 </div>
 
 <script>
@@ -15,6 +18,7 @@
     selectElement.addEventListener('change', (event) => {
         const result = document.querySelector('#submit-btn');
         result.disabled = false
+        result.className = "btn btn-success"
     })
 </script>
      
