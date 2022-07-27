@@ -26,7 +26,7 @@ def scanning(request):
         fs.save(uploaded_file.name, uploaded_file)
         scan = scanner.Scan(uploaded_file.name, [[]])
         scan.scan_iteration()
-        report = scan.getInfo_arr()    
+        report = scan.getInfo_arr()
         report_for_file = scan.getInfo_arr() 
     try: 
         create_file(report_for_file,"Report.txt")
@@ -59,4 +59,12 @@ def remove_files():
          os.remove(settings.MEDIA_ROOT+'\containers.txt')
     if path.exists(settings.MEDIA_ROOT + '/Report.txt'):
         os.remove(settings.MEDIA_ROOT+'\Report.txt')
-    
+
+
+def convert_to_dict(input_list):
+    return_dict = {}
+    arr2 = ['ID', 'SEALINE', 'START', 'END', 'START-DATE', 'END-DATE']
+    length = len(input_list)
+    for i in range(length):
+        return_dict[i] = dict(zip(arr2, input_list[i]))
+    return return_dict
